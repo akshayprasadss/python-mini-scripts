@@ -1,9 +1,8 @@
 venv/
-<<<<<<< HEAD
 __pycache__/
 *.pyc
-db.sqlite3
 .env
-=======
-__pycache__/
->>>>>>> ab37fbeb3bf731ea3bf8b59634db8409e13c8700
+db.sqlite3
+media/
+logs/
+celerybeat-schedule
