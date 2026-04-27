@@ -13,7 +13,7 @@ from pathlib import Path
 import os
 from dotenv import load_dotenv
 from datetime import timedelta
-
+from celery.schedules import crontab
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 load_dotenv(BASE_DIR / ".env")
@@ -29,7 +29,8 @@ SECRET_KEY = os.getenv(
     "SECRET_KEY",
     "zecpath_super_secure_secret_key_2026_backend_project_ats_system"
 )
-
+RAZORPAY_KEY = os.getenv("RAZORPAY_KEY")
+RAZORPAY_SECRET = os.getenv("RAZORPAY_SECRET")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.getenv("DEBUG", "True") == "True"
 
@@ -46,7 +47,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django_filters',
-
+    'drf_yasg',
     'rest_framework',
     'rest_framework_simplejwt',
     'rest_framework_simplejwt.token_blacklist',
@@ -61,6 +62,7 @@ MIDDLEWARE = [
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'core.middleware.RoleLoggingMiddleware',
+    'core.middleware.RequestLogMiddleware',   
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     
@@ -126,7 +128,9 @@ TIME_ZONE = 'UTC'
 USE_I18N = True
 
 USE_TZ = True
-
+SECURE_BROWSER_XSS_FILTER = True
+SECURE_CONTENT_TYPE_NOSNIFF = True
+X_FRAME_OPTIONS = "DENY"
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
@@ -145,6 +149,13 @@ REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': (
         'rest_framework.permissions.IsAuthenticated',
     ),
+    
+    "DEFAULT_FILTER_BACKENDS": [
+    "django_filters.rest_framework.DjangoFilterBackend",
+    "rest_framework.filters.SearchFilter",
+    "rest_framework.filters.OrderingFilter",
+    ],
+
     'EXCEPTION_HANDLER': 'core.exceptions.custom_exception_handler',
     "DEFAULT_PAGINATION_CLASS": "rest_framework.pagination.PageNumberPagination",
     "PAGE_SIZE": 5,
@@ -152,6 +163,15 @@ REST_FRAMEWORK = {
     "DEFAULT_FILTER_BACKENDS": (
         "django_filters.rest_framework.DjangoFilterBackend",
     ),
+    "DEFAULT_THROTTLE_CLASSES": [
+        "rest_framework.throttling.UserRateThrottle",
+        "rest_framework.throttling.AnonRateThrottle",
+    ],
+    "DEFAULT_THROTTLE_RATES": {
+        "user": "100/day",
+        "anon": "20/day",
+        "premium": "1000/day",
+    }
 }
 
 SIMPLE_JWT = {
@@ -160,4 +180,55 @@ SIMPLE_JWT = {
     'AUTH_HEADER_TYPES': ('Bearer',),
     "ROTATE_REFRESH_TOKENS": True,
     "BLACKLIST_AFTER_ROTATION": True,
+}
+
+EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
+EMAIL_HOST = "smtp.gmail.com"
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+
+EMAIL_HOST_USER = "akshayprasad014@gmail.com"
+EMAIL_HOST_PASSWORD = "iyzkevexfyppymdo"
+
+CACHES = {
+    "default": {
+        "BACKEND": "django.core.cache.backends.locmem.LocMemCache",
+        "LOCATION": "unique",
+    }
+}
+
+CELERY_BROKER_URL = 'redis://localhost:6379/0'
+CELERY_ACCEPT_CONTENT = ['json']
+CELERY_TASK_SERIALIZER = 'json'
+
+INSTALLED_APPS += [
+    'django_celery_results',   # already you have ✅
+    'django_celery_beat',      # add this ✅
+]
+
+CELERY_RESULT_BACKEND = 'django-db'
+
+# 🔥 NEW (for periodic tasks)
+CELERY_BEAT_SCHEDULE = {
+    "run-reminders-every-10-minutes": {
+        "task": "core.tasks.run_reminder_engine",
+        "schedule": crontab(minute="*/10"),
+    },
+}
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,   # 🔥 IMPORTANT
+    'handlers': {
+        'file': {
+            'level': 'INFO',
+            'class': 'logging.FileHandler',
+            'filename': 'logs/app.log',
+        },
+    },
+    'loggers': {
+        '': {   # 🔥 root logger (captures everything)
+            'handlers': ['file'],
+            'level': 'INFO',
+        },
+    },
 }

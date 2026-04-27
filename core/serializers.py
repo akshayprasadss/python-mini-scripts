@@ -2,6 +2,7 @@ import os
 from rest_framework import serializers
 from django.contrib.auth import get_user_model
 from .models import Application, CandidateProfile, EmployerProfile, CustomUser, Job
+from core.models import AIAnswer
 
 User = get_user_model()
 
@@ -26,9 +27,9 @@ class SignupSerializer(serializers.ModelSerializer):
 class JobSerializer(serializers.ModelSerializer):
     class Meta:
         model = Job
-        fields = '__all__'
-        read_only_fields = ["employer"]
-
+        fields = "__all__"
+        read_only_fields = ["employer", "created_at", "updated_at"]
+        
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = CustomUser
@@ -38,8 +39,8 @@ class ApplicationSerializer(serializers.ModelSerializer):
     class Meta:
         model = Application
         fields = "__all__"
-        read_only_fields = ["candidate", "job", "applied_at"] 
-
+        read_only_fields = ["candidate", "job", "status", "applied_at","updated_at"]
+        
 class CandidateProfileSerializer(serializers.ModelSerializer):
     class Meta:
         model = CandidateProfile
@@ -65,3 +66,8 @@ class EmployerProfileSerializer(serializers.ModelSerializer):
         model = EmployerProfile
         fields = "__all__"
         read_only_fields = ["user", "verification_status", "is_active"]
+
+class AnswerSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = AIAnswer
+        fields = "__all__"

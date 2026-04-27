@@ -1,7 +1,10 @@
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
 from .models import CustomUser, Job, EmployerProfile, CandidateProfile
-
+from .models import AdminActionLog
+from .models import AIInterviewSession, AIQuestionTemplate, AIAnswer
+from .models import AvailabilitySlot, InterviewSchedule
+from .models import ReminderLog
 
 class CustomUserAdmin(UserAdmin):
     model = CustomUser
@@ -61,3 +64,10 @@ admin.site.register(CustomUser, CustomUserAdmin)
 admin.site.register(Job)
 admin.site.register(EmployerProfile)
 admin.site.register(CandidateProfile)
+admin.site.register(AdminActionLog)
+admin.site.register(AIInterviewSession)
+admin.site.register(AIQuestionTemplate)
+admin.site.register(AIAnswer)
+admin.site.register(AvailabilitySlot)
+admin.site.register(InterviewSchedule)
+admin.site.register(ReminderLog)

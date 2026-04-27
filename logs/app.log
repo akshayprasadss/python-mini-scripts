@@ -1,0 +1,353 @@
+Watching for file changes with StatReloader
+Request: POST /api/login/
+Unsupported Media Type: /api/login/
+Request: GET /
+Not Found: /
+Request: GET /favicon.ico
+Not Found: /favicon.ico
+Request: GET /admin/
+Request: GET /admin/core/customuser/
+Request: GET /admin/jsi18n/
+Request: POST /api/login/
+Unsupported Media Type: /api/login/
+Request: POST /api/login/
+Unsupported Media Type: /api/login/
+Request: POST /api/token/
+Unsupported Media Type: /api/token/
+Request: POST /api/login/
+Unsupported Media Type: /api/login/
+Request: POST /api/login/
+Request: GET /api/jobs/1/analytics/
+Request: GET /api/jobs/2/analytics/
+Request: GET /api/jobs/4/analytics/
+Request: GET /api/jobs/6/analytics/
+Request: POST /api/login/
+Request: POST /api/ai-interview/1/
+C:\Users\carburetorr\python-mini-scripts\zecpath_backend\core\views.py changed, reloading.
+Watching for file changes with StatReloader
+Request: POST /api/ai-interview/1/
+Request: POST /api/ai-interview/1/score/
+Unauthorized: /api/ai-interview/1/score/
+Request: POST /api/ai-interview/1/score/
+Method Not Allowed: /api/ai-interview/1/score/
+Request: GET /api/ai-interview/1/score/
+Request: POST /api/login/
+Unsupported Media Type: /api/login/
+Request: POST /api/login/
+Unauthorized: /api/login/
+Request: GET /admin/core/customuser/3/change/
+Request: GET /admin/jsi18n/
+Request: POST /api/login/
+Request: GET /admin/core/customuser/
+Request: POST /api/ai-interview/1/
+Request: POST /api/ai-interview/2/
+Request: POST /api/ai-interview/2/
+Request: POST /api/ai-interview/2/
+Request: POST /api/ai-interview/2/
+Request: POST /api/ai-interview/2/
+Request: POST /api/ai-interview/2/score/
+Method Not Allowed: /api/ai-interview/2/score/
+Request: GET /api/ai-interview/2/score/
+Request: POST /api/login/
+Request: POST /api/jobs/1/analytics/
+Method Not Allowed: /api/jobs/1/analytics/
+Request: GET /api/jobs/1/analytics/
+Request: GET /api/jobs/2/analytics/
+Request: GET /admin/core/job/
+Request: GET /admin/jsi18n/
+Request: GET /admin/core/job/1/change/
+Request: GET /admin/jsi18n/
+Request: GET /admin/core/job/
+Request: GET /api/jobs/3/analytics/
+Request: GET /api/jobs/4/analytics/
+Request: POST /api/login/
+Request: GET /api/ai-interview/2/score/
+Request: POST /api/login/
+Request: POST /api/jobs/1/analytics/
+Method Not Allowed: /api/jobs/1/analytics/
+Request: GET /api/jobs/1/analytics/
+Request: POST /api/applications/
+Not Found: /api/applications/
+Request: POST /api/applications/
+Not Found: /api/applications/
+Request: POST /api/applications/
+Not Found: /api/applications/
+Request: POST /api/applications/1/status/
+Method Not Allowed: /api/applications/1/status/
+Request: GET /api/applications/1/status/
+Method Not Allowed: /api/applications/1/status/
+Request: PUT /api/applications/1/status/
+Method Not Allowed: /api/applications/1/status/
+Request: PUT /api/applications/my/
+Method Not Allowed: /api/applications/my/
+Request: GET /api/applications/my/
+Request: GET /api/applications/my/
+Request: GET /api/applications/1/status/
+Method Not Allowed: /api/applications/1/status/
+Request: PATCH /api/applications/1/status/
+Forbidden: /api/applications/1/status/
+Request: POST /api/applications/1/status/
+Method Not Allowed: /api/applications/1/status/
+Request: PATCH /api/applications/1/status/
+Forbidden: /api/applications/1/status/
+Watching for file changes with StatReloader
+C:\Users\carburetorr\python-mini-scripts\zecpath_backend\core\urls.py changed, reloading.
+Watching for file changes with StatReloader
+Request: GET /
+Not Found: /
+Request: GET /favicon.ico
+Not Found: /favicon.ico
+Request: GET /admin/
+Watching for file changes with StatReloader
+Request: GET /
+Not Found: /
+Request: GET /admin/
+Request: GET /swagger/
+Not Found: /swagger/
+Watching for file changes with StatReloader
+Request: GET /swagger/
+Not Found: /swagger/
+Request: GET /swagger/
+Not Found: /swagger/
+Request: GET /api/swagger/
+Request: GET /api/swagger/
+view's ApplyJobView.get_queryset raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+Traceback (most recent call last):
+  File "C:\Users\carburetorr\python-mini-scripts\venv\Lib\site-packages\drf_yasg\inspectors\base.py", line 48, in call_view_method
+    return view_method()
+  File "C:\Users\carburetorr\python-mini-scripts\venv\Lib\site-packages\rest_framework\generics.py", line 67, in get_queryset
+    assert self.queryset is not None, (
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'ApplyJobView' should either include a `queryset` attribute, or override the `get_queryset()` method.
+view's JobUpdateView.get_queryset raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+Traceback (most recent call last):
+  File "C:\Users\carburetorr\python-mini-scripts\venv\Lib\site-packages\drf_yasg\inspectors\base.py", line 48, in call_view_method
+    return view_method()
+  File "C:\Users\carburetorr\python-mini-scripts\zecpath_backend\core\views.py", line 175, in get_queryset
+    if user.role == user.Role.ADMIN:
+       ^^^^^^^^^
+AttributeError: 'AnonymousUser' object has no attribute 'role'
+view's JobUpdateView.get_queryset raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+Traceback (most recent call last):
+  File "C:\Users\carburetorr\python-mini-scripts\venv\Lib\site-packages\drf_yasg\inspectors\base.py", line 48, in call_view_method
+    return view_method()
+  File "C:\Users\carburetorr\python-mini-scripts\zecpath_backend\core\views.py", line 175, in get_queryset
+    if user.role == user.Role.ADMIN:
+       ^^^^^^^^^
+AttributeError: 'AnonymousUser' object has no attribute 'role'
+Watching for file changes with StatReloader
+C:\Users\carburetorr\python-mini-scripts\zecpath_backend\zecpath_backend\settings.py changed, reloading.
+Watching for file changes with StatReloader
+Request: GET /
+Not Found: /
+Request: GET /favicon.ico
+Not Found: /favicon.ico
+Request: GET /admin/
+Request: GET /admin/login/
+Request: POST /admin/login/
+User: zecpath@gmail.com | Role: ADMIN
+Request: GET /admin/
+User: zecpath@gmail.com | Role: ADMIN
+Request: GET /admin/core/customuser/
+User: zecpath@gmail.com | Role: ADMIN
+Request: GET /admin/jsi18n/
+User: zecpath@gmail.com | Role: ADMIN
+Request: GET /admin/
+Watching for file changes with StatReloader
+User: zecpath@gmail.com | Role: ADMIN
+Request: GET /
+Not Found: /
+User: zecpath@gmail.com | Role: ADMIN
+Request: GET /admin/
+User: zecpath@gmail.com | Role: ADMIN
+Request: GET /admin/core/customuser/
+User: zecpath@gmail.com | Role: ADMIN
+Request: GET /admin/jsi18n/
+User: zecpath@gmail.com | Role: ADMIN
+Request: GET /admin/core/customuser/1/change/
+User: zecpath@gmail.com | Role: ADMIN
+Request: GET /admin/jsi18n/
+User: zecpath@gmail.com | Role: ADMIN
+Request: GET /admin/core/customuser/1/password/
+User: zecpath@gmail.com | Role: ADMIN
+Request: POST /admin/core/customuser/1/password/
+User: zecpath@gmail.com | Role: ADMIN
+Request: GET /admin/core/customuser/1/change/
+User: zecpath@gmail.com | Role: ADMIN
+Request: GET /admin/jsi18n/
+Request: POST /api/login/
+Unsupported Media Type: /api/login/
+Request: GET /api/login/
+Method Not Allowed: /api/login/
+Request: POST /api/login
+Internal Server Error: /api/login
+Traceback (most recent call last):
+  File "C:\Users\carburetorr\python-mini-scripts\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\carburetorr\python-mini-scripts\venv\Lib\site-packages\django\utils\deprecation.py", line 311, in __call__
+    response = self.process_response(request, response)
+  File "C:\Users\carburetorr\python-mini-scripts\venv\Lib\site-packages\django\middleware\common.py", line 109, in process_response
+    self.get_full_path_with_slash(request)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\carburetorr\python-mini-scripts\venv\Lib\site-packages\django\middleware\common.py", line 87, in get_full_path_with_slash
+    raise RuntimeError(
+    ...<9 lines>...
+    )
+RuntimeError: You called this URL via POST, but the URL doesn't end in a slash and you have APPEND_SLASH set. Django can't redirect to the slash URL while maintaining POST data. Change your form to point to 127.0.0.1:8000/api/login/ (note the trailing slash), or set APPEND_SLASH=False in your Django settings.
+Request: POST /api/token/
+Unsupported Media Type: /api/token/
+Request: POST /api/token/
+Request: POST /api/admin/create-plan/
+Not Found: /api/admin/create-plan/
+C:\Users\carburetorr\python-mini-scripts\zecpath_backend\core\views.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+C:\Users\carburetorr\python-mini-scripts\zecpath_backend\core\views.py changed, reloading.
+Watching for file changes with StatReloader
+User: zecpath@gmail.com | Role: ADMIN
+Request: GET /
+Not Found: /
+User: zecpath@gmail.com | Role: ADMIN
+Request: GET /admin/
+Request: POST /api/admin/create-plan/
+Internal Server Error: /api/admin/create-plan/
+C:\Users\carburetorr\python-mini-scripts\zecpath_backend\core\views.py changed, reloading.
+Watching for file changes with StatReloader
+Request: POST /api/admin/create-plan/
+Internal Server Error: /api/admin/create-plan/
+Watching for file changes with StatReloader
+User: zecpath@gmail.com | Role: ADMIN
+Request: GET /admin/
+Request: POST /api/admin/create-plan/
+Internal Server Error: /api/admin/create-plan/
+Request: POST /api/admin/create-plan/
+Internal Server Error: /api/admin/create-plan/
+C:\Users\carburetorr\python-mini-scripts\zecpath_backend\core\views.py changed, reloading.
+Watching for file changes with StatReloader
+Request: POST /api/admin/create-plan/
+Unauthorized: /api/admin/create-plan/
+Request: POST /api/token/
+Request: POST /api/admin/create-plan/
+User: zecpath@gmail.com | Role: ADMIN
+Request: GET /admin/
+User: zecpath@gmail.com | Role: ADMIN
+Request: GET /admin/core/adminactionlog/
+User: zecpath@gmail.com | Role: ADMIN
+Request: GET /admin/jsi18n/
+User: zecpath@gmail.com | Role: ADMIN
+Request: GET /admin/core/aianswer/
+User: zecpath@gmail.com | Role: ADMIN
+Request: GET /admin/jsi18n/
+User: zecpath@gmail.com | Role: ADMIN
+Request: GET /admin/core/aiinterviewsession/
+User: zecpath@gmail.com | Role: ADMIN
+Request: GET /admin/jsi18n/
+User: zecpath@gmail.com | Role: ADMIN
+Request: GET /admin/core/aiquestiontemplate/
+User: zecpath@gmail.com | Role: ADMIN
+Request: GET /admin/jsi18n/
+User: zecpath@gmail.com | Role: ADMIN
+Request: GET /admin/core/customuser/
+User: zecpath@gmail.com | Role: ADMIN
+Request: GET /admin/jsi18n/
+User: zecpath@gmail.com | Role: ADMIN
+Request: GET /admin/core/customuser/1/change/
+User: zecpath@gmail.com | Role: ADMIN
+Request: GET /admin/jsi18n/
+Request: GET /api/payment/create/
+Not Found: /api/payment/create/
+Watching for file changes with StatReloader
+User: zecpath@gmail.com | Role: ADMIN
+Request: GET /
+Not Found: /
+User: zecpath@gmail.com | Role: ADMIN
+Request: GET /admin/
+Request: POST /api/token/
+Request: GET /api/create-order/
+Not Found: /api/create-order/
+Request: POST /api/create-order/
+Not Found: /api/create-order/
+Request: POST /api/create-order/
+Not Found: /api/create-order/
+Request: POST /api/create-order/
+Not Found: /api/create-order/
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Request: POST /api/create-order/
+Not Found: /api/create-order/
+Watching for file changes with StatReloader
+User: zecpath@gmail.com | Role: ADMIN
+Request: GET /
+Not Found: /
+User: zecpath@gmail.com | Role: ADMIN
+Request: GET /admin/
+Request: POST /api/create-order/
+Not Found: /api/create-order/
+Request: POST /api/create-order/
+Not Found: /api/create-order/
+Request: POST /api/admin/create-order/
+Internal Server Error: /api/admin/create-order/
+C:\Users\carburetorr\python-mini-scripts\zecpath_backend\core\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\carburetorr\python-mini-scripts\zecpath_backend\core\views.py changed, reloading.
+Watching for file changes with StatReloader
+Request: POST /api/admin/create-order/
+Request: POST /api/subscribe/
+Not Found: /api/subscribe/
+Watching for file changes with StatReloader
+User: zecpath@gmail.com | Role: ADMIN
+Request: GET /admin/
+Request: POST /api/login/
+Request: POST /api/subscribe/
+Request: POST /api/login/
+Unauthorized: /api/login/
+Request: POST /api/token/
+Request: POST /api/login/
+Request: GET /api/jobs/1/analytics/
+Forbidden: /api/jobs/1/analytics/
+Request: GET /api/jobs/2/analytics/
+Forbidden: /api/jobs/2/analytics/
+Request: GET /api/jobs/1/analytics/
+Forbidden: /api/jobs/1/analytics/
+Request: GET /api/jobs/4/analytics/
+Forbidden: /api/jobs/4/analytics/
+Request: GET /api/jobs/55/analytics/
+Forbidden: /api/jobs/55/analytics/
+Request: GET /api/jobs/55/analytics/
+Forbidden: /api/jobs/55/analytics/
+Request: GET /api/jobs/55/analytics/
+Forbidden: /api/jobs/55/analytics/
+Request: POST /api/login/
+Request: GET /api/jobs/1/analytics/
+Forbidden: /api/jobs/1/analytics/
+Request: POST /api/login/
+Request: GET /api/jobs/1/analytics/
+Forbidden: /api/jobs/1/analytics/
+Request: POST /api/jobs/
+Method Not Allowed: /api/jobs/
+Request: GET /api/jobs/
+Request: GET /api/jobs/
+User: zecpath@gmail.com | Role: ADMIN
+Request: GET /admin/core/employerprofile/
+User: zecpath@gmail.com | Role: ADMIN
+Request: GET /admin/jsi18n/
+Request: POST /api/login/
+Request: POST /api/subscribe/
+Unauthorized: /api/subscribe/
+Request: POST /api/subscribe/
+Request: POST /api/subscribe/
+Request: POST /api/subscribe/
+Request: POST /api/subscribe/
+Request: POST /api/login/
+Request: POST /api/subscribe/
+Request: GET /api/jobs/1/analytics/
+Request: POST /api/token/
+Request: GET /api/admin/revenue/
+Request: GET /api/admin/revenue/monthly/
+Request: GET /api/admin/transactions/
+User: zecpath@gmail.com | Role: ADMIN
+Request: GET /admin/core/employerprofile/
+Watching for file changes with StatReloader
+Request: POST /api/login/
+Request: GET /api/jobs/1/analytics/
+Forbidden: /api/jobs/1/analytics/
